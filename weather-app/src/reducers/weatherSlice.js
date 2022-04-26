@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  dailyWeather: {},
-  weeklyWeather: {},
+  dailyWeather: undefined,
+  weeklyWeather: undefined,
   autocomplete: [],
+  favorites: [],
+  city: 'Tel Aviv',
 };
 
 const weatherSlice = createSlice({
@@ -14,10 +16,14 @@ const weatherSlice = createSlice({
       return [...payload.data];
     },
     changeDaily: (state, { payload }) => {
-      console.log(payload.dailyWeather);
-      return { ...state, dailyWeather: payload.dailyWeather };
+      return {
+        ...state,
+        dailyWeather: payload.dailyWeather[0],
+        city: payload.city,
+      };
     },
     changeWeekly: (state, { payload }) => {
+      console.log(payload.weeklyWeather);
       return { ...state, weeklyWeather: payload.weeklyWeather };
     },
     completeAuto: (state, { payload }) => {
