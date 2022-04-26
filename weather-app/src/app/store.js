@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import weatherReducer from '../reducers/weatherSlice';
+import thunkMiddleWare from 'redux-thunk';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    weather: weatherReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(thunkMiddleWare),
 });
