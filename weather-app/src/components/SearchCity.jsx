@@ -3,7 +3,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { completeAuto, changeDaily } from '../reducers/weatherSlice';
+import {
+  completeAuto,
+  changeDaily,
+  changeWeekly,
+} from '../reducers/weatherSlice';
 
 const { REACT_APP_API_KEY } = process.env;
 function SearchCity() {
@@ -27,18 +31,19 @@ function SearchCity() {
     };
   };
   const handleSearch = () => {
-    return (dispatch) => {
-      axios
-        .get(
+    return async (dispatch) => {
+      try {
+        const daily = await axios.get(
           `http://dataservice.accuweather.com/currentconditions/v1/${weather.autocomplete[0].Key}?apikey=${REACT_APP_API_KEY}`
-        )
-        .then(({ data }) => {
-          dispatch(changeDaily({ dailyWeather: data }));
-        })
-        .catch((error) => {
-          // TODO - Add like failure action and dispatch
-          console.log(error);
-        });
+        );
+        const weekly = await axios.get(
+          `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${weather.autocomplete[0].Key}?apikey=${REACT_APP_API_KEY}`
+        );
+        dispatch(changeDaily({ dailyWeather: daily.data, city: search }));
+        dispatch(changeWeekly({ weeklyWeather: weekly.data }));
+      } catch (error) {
+        console.log(error);
+      }
     };
   };
   return (
