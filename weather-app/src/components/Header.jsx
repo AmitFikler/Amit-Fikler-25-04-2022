@@ -10,8 +10,12 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import '../styles/header.css';
+import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'Favorites'];
+const pages = [
+  { name: 'Home', link: '/' },
+  { name: 'Favorites', link: '/favorites' },
+];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -65,7 +69,7 @@ const Header = () => {
               }}>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{page}</Typography>
+                  <Link to={page.link}>{page.name}</Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -80,10 +84,10 @@ const Header = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}>
-                {page}
+                <Link to={page.link}>{page.name}</Link>
               </Button>
             ))}
           </Box>

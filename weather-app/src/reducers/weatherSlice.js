@@ -23,18 +23,40 @@ const weatherSlice = createSlice({
       };
     },
     changeWeekly: (state, { payload }) => {
-      console.log(payload.weeklyWeather);
       return { ...state, weeklyWeather: payload.weeklyWeather };
     },
     completeAuto: (state, { payload }) => {
       return { ...state, autocomplete: payload.auto };
     },
+    handleFavorite: (state, { payload }) => {
+      console.log(payload);
+      if (payload.favorite) {
+        return {
+          ...state,
+          favorites: state.favorites.filter(
+            (item) => item.city !== payload.city
+          ),
+        };
+      }
+      return {
+        ...state,
+        favorites: [
+          ...state.favorites,
+          { city: payload.city, cityId: payload.cityId },
+        ],
+      };
+    },
   },
 });
 
 // Export the actions
-export const { initialData, changeDaily, changeWeekly, completeAuto } =
-  weatherSlice.actions;
+export const {
+  initialData,
+  changeDaily,
+  changeWeekly,
+  completeAuto,
+  handleFavorite,
+} = weatherSlice.actions;
 
 // Export the reducer
 export default weatherSlice.reducer;
