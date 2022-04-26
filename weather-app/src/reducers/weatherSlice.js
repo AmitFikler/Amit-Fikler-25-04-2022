@@ -14,6 +14,7 @@ const weatherSlice = createSlice({
       return [...payload.data];
     },
     changeDaily: (state, { payload }) => {
+      console.log(payload.dailyWeather);
       return { ...state, dailyWeather: payload.dailyWeather };
     },
     changeWeekly: (state, { payload }) => {
