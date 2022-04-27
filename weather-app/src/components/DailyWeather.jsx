@@ -1,8 +1,4 @@
-import { useSelector } from 'react-redux';
-
 function DailyWeather({ daily }) {
-  const weather = useSelector(({ weather }) => weather);
-
   const dailyIcon =
     ('' + daily.WeatherIcon).length === 1
       ? '0' + daily.WeatherIcon
