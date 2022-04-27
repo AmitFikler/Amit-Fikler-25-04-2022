@@ -1,46 +1,34 @@
-# Getting Started with Create React App and Redux
+# Weather App 🌤️🌤️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+Simple, responsive, web app in react that shows the weather of some city. 🌎  
+The user able to search for a city and save it to his favorites. ⭐
 
-## Available Scripts
+## API 💿
 
-In the project directory, you can run:
+The API I had used for this app is [AccuWeather](https://developer.accuweather.com/).  
+I had used 3 endpoints:
 
-### `npm start`
+- [Autocomplete search](https://developer.accuweather.com/accuweather-locations-api/apis/get/locations/v1/cities/autocomplete)
+- [Current Conditions](https://developer.accuweather.com/accuweather-current-conditions-api/apis/get/currentconditions/v1/%7BlocationKey%7D)
+- [5 Days of Daily Forecasts](https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/daily/5day/%7BlocationKey%7D)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Built With 💻
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- _React_
+- _Redux_
+- _React Router Dom_
+- _Moment_
+- _React Toastify_
+- _Axios_
 
-### `npm test`
+## Deployment 🚀
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✨ [Netlify](https://earnest-kitsune-5b0de4.netlify.app/) ✨
 
-### `npm run build`
+### Weather Page 🌤️
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![weather](/screenshots/home.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Favorite Page ⭐⭐
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![favorite](/screenshots/favorites.png)

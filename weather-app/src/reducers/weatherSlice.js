@@ -5,7 +5,7 @@ const initialState = {
   weeklyWeather: undefined,
   autocomplete: [],
   favorites: [],
-  city: 'Tel Aviv',
+  city: '',
 };
 
 const weatherSlice = createSlice({
@@ -29,7 +29,6 @@ const weatherSlice = createSlice({
       return { ...state, autocomplete: payload.auto };
     },
     handleFavorite: (state, { payload }) => {
-      console.log(payload);
       if (payload.favorite) {
         return {
           ...state,

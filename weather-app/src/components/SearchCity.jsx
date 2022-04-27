@@ -41,7 +41,6 @@ function SearchCity() {
         dispatch(changeDaily({ dailyWeather: daily.data, city: search }));
         dispatch(changeWeekly({ weeklyWeather: weekly.data }));
       } catch (error) {
-        console.log(error);
         toast.error(error.response.data.Message);
       }
     };

@@ -20,7 +20,6 @@ function FavoriteScreen() {
           `https://dataservice.accuweather.com/currentconditions/v1/${fav.cityId}?apikey=${process.env.REACT_APP_API_KEY}`
         )
         .then((res) => {
-          console.log('in then');
           setFavorites((prev) => [
             ...prev,
             { data: res.data[0], city: fav.city, cityId: fav.cityId },
@@ -28,8 +27,6 @@ function FavoriteScreen() {
         });
     });
   }, []);
-
-  console.log(favorites);
 
   const handleClick = (cityId, city) => {
     return async (dispatch) => {
