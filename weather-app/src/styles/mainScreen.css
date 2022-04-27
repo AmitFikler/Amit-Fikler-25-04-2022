@@ -50,7 +50,7 @@
 .weather-d {
     margin-top: 2vh;
     background: rgba(255, 255, 255, 0.845);
-    width: 40%;
+    width: 30vh;
     display: flex;
     flex-direction: column;
     align-content: center;
