@@ -17,7 +17,7 @@ function FavoriteScreen() {
     weather.favorites.forEach((fav) => {
       axios
         .get(
-          `http://dataservice.accuweather.com/currentconditions/v1/${fav.cityId}?apikey=${process.env.REACT_APP_API_KEY}`
+          `https://dataservice.accuweather.com/currentconditions/v1/${fav.cityId}?apikey=${process.env.REACT_APP_API_KEY}`
         )
         .then((res) => {
           console.log('in then');
@@ -35,10 +35,10 @@ function FavoriteScreen() {
     return async (dispatch) => {
       try {
         const daily = await axios.get(
-          `http://dataservice.accuweather.com/currentconditions/v1/${cityId}?apikey=${process.env.REACT_APP_API_KEY}`
+          `https://dataservice.accuweather.com/currentconditions/v1/${cityId}?apikey=${process.env.REACT_APP_API_KEY}`
         );
         const weekly = await axios.get(
-          `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityId}?apikey=${process.env.REACT_APP_API_KEY}&metric=true`
+          `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityId}?apikey=${process.env.REACT_APP_API_KEY}&metric=true`
         );
         dispatch(changeDaily({ dailyWeather: daily.data, city }));
         dispatch(changeWeekly({ weeklyWeather: weekly.data }));
