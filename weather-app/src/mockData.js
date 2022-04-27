@@ -342,3 +342,102 @@ export const weekly = {
     },
   ],
 };
+
+export const favData = [
+  {
+    LocalObservationDateTime: '2022-04-26T12:27:00+03:00',
+    EpochTime: 1650965220,
+    WeatherText: 'Mostly sunny',
+    WeatherIcon: 2,
+    HasPrecipitation: false,
+    PrecipitationType: null,
+    IsDayTime: true,
+    Temperature: {
+      Metric: {
+        Value: 21,
+        Unit: 'C',
+        UnitType: 17,
+      },
+      Imperial: {
+        Value: 70,
+        Unit: 'F',
+        UnitType: 18,
+      },
+    },
+    MobileLink:
+      'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+    Link: 'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+  },
+  {
+    LocalObservationDateTime: '2022-04-26T12:27:00+03:00',
+    EpochTime: 1650965220,
+    WeatherText: 'Mostly sunny',
+    WeatherIcon: 2,
+    HasPrecipitation: false,
+    PrecipitationType: null,
+    IsDayTime: true,
+    Temperature: {
+      Metric: {
+        Value: 21,
+        Unit: 'C',
+        UnitType: 17,
+      },
+      Imperial: {
+        Value: 70,
+        Unit: 'F',
+        UnitType: 18,
+      },
+    },
+    MobileLink:
+      'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+    Link: 'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+  },
+  {
+    LocalObservationDateTime: '2022-04-26T12:27:00+03:00',
+    EpochTime: 1650965220,
+    WeatherText: 'Mostly sunny',
+    WeatherIcon: 2,
+    HasPrecipitation: false,
+    PrecipitationType: null,
+    IsDayTime: true,
+    Temperature: {
+      Metric: {
+        Value: 21,
+        Unit: 'C',
+        UnitType: 17,
+      },
+      Imperial: {
+        Value: 70,
+        Unit: 'F',
+        UnitType: 18,
+      },
+    },
+    MobileLink:
+      'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+    Link: 'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+  },
+  {
+    LocalObservationDateTime: '2022-04-26T12:27:00+03:00',
+    EpochTime: 1650965220,
+    WeatherText: 'Mostly sunny',
+    WeatherIcon: 2,
+    HasPrecipitation: false,
+    PrecipitationType: null,
+    IsDayTime: true,
+    Temperature: {
+      Metric: {
+        Value: 21,
+        Unit: 'C',
+        UnitType: 17,
+      },
+      Imperial: {
+        Value: 70,
+        Unit: 'F',
+        UnitType: 18,
+      },
+    },
+    MobileLink:
+      'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+    Link: 'http://www.accuweather.com/en/il/tel-aviv/215854/current-weather/215854?lang=en-us',
+  },
+];
