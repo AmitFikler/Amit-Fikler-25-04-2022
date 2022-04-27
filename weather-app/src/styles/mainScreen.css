@@ -1,0 +1,67 @@
+.search-city {
+    display: flex !important;
+    align-content: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.search-form {
+    display: flex !important;
+    flex-direction: row !important;
+    background-color: rgba(255, 255, 255, 0.479) !important;
+    padding: 18px !important;
+    border: 1px solid !important;
+    border-radius: 10px !important;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+}
+
+.forecast {
+    margin-top: 2vh;
+    background-color: rgba(255, 255, 255, 0.797);
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column
+}
+.weather-info-w {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-phrase {
+    text-align: center;
+}
+.weather-info-d {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-d {
+    margin-top: 2vh;
+    background: rgba(255, 255, 255, 0.845);
+    width: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px !important;
+}
+
+
+.temp-d {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
