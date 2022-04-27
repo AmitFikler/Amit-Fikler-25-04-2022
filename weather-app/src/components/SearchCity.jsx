@@ -8,6 +8,7 @@ import {
   changeDaily,
   changeWeekly,
 } from '../reducers/weatherSlice';
+import { toast } from 'react-toastify';
 
 const { REACT_APP_API_KEY } = process.env;
 function SearchCity() {
@@ -16,20 +17,18 @@ function SearchCity() {
   const [search, setSearch] = useState('');
 
   const handleTyping = () => {
-    return (dispatch) => {
-      axios
-        .get(
+    return async (dispatch) => {
+      try {
+        const { data } = await axios.get(
           `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${REACT_APP_API_KEY}&q=${search}`
-        )
-        .then(({ data }) => {
-          dispatch(completeAuto({ auto: data }));
-        })
-        .catch((error) => {
-          // TODO - Add like failure action and dispatch
-          console.log(error);
-        });
+        );
+        dispatch(completeAuto({ auto: data }));
+      } catch (error) {
+        toast.error(error.response.data.Message);
+      }
     };
   };
+
   const handleSearch = () => {
     return async (dispatch) => {
       try {
@@ -37,12 +36,13 @@ function SearchCity() {
           `http://dataservice.accuweather.com/currentconditions/v1/${weather.autocomplete[0].Key}?apikey=${REACT_APP_API_KEY}`
         );
         const weekly = await axios.get(
-          `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${weather.autocomplete[0].Key}?apikey=${REACT_APP_API_KEY}`
+          `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${weather.autocomplete[0].Key}?apikey=${REACT_APP_API_KEY}&metric=true`
         );
         dispatch(changeDaily({ dailyWeather: daily.data, city: search }));
         dispatch(changeWeekly({ weeklyWeather: weekly.data }));
       } catch (error) {
         console.log(error);
+        toast.error(error.response.data.Message);
       }
     };
   };
@@ -59,6 +59,7 @@ function SearchCity() {
           sx={{ width: 300 }}
           renderInput={(params) => (
             <TextField
+              key={params.id}
               {...params}
               label='Search a city..'
               onKeyUp={(e) => dispatch(handleTyping(e))}

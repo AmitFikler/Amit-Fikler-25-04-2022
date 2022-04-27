@@ -28,7 +28,7 @@ function MainScreen() {
           <div style={{ display: 'flex' }}>
             <h1>{weather.city}</h1>
             <span>
-              {weather.favorites.some((fav) => fav.city === weather.city) ? (
+              {weather.favorites?.some((fav) => fav.city === weather.city) ? (
                 <IconButton
                   aria-label='favorite'
                   style={{ color: 'yellow' }}
