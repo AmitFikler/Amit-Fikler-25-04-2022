@@ -55,7 +55,7 @@ function SearchCity() {
           onChange={(e, value) => {
             setSearch(value);
           }}
-          options={weather.autocomplete.map((item) => item.LocalizedName)}
+          options={weather.autocomplete?.map((item) => item.LocalizedName)}
           sx={{ width: 300 }}
           renderInput={(params) => (
             <TextField
