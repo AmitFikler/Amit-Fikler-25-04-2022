@@ -1,7 +1,7 @@
 # Weather App 🌤️🌤️
 
-Simple, responsive, web app in react that shows the weather of some city. 🌎  
-The user able to search for a city and save it to his favorites. ⭐
+Simple, responsive, web app in react that shows the weather of any city. 🌎  
+The user is able to search for a city and save it to his favorites. ⭐
 
 ## API 💿
 
